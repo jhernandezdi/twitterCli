@@ -577,9 +577,11 @@ public class GestionTweets_HashtagsMasUsadosLNServiceTest extends GestionTweetsL
 			res=serviceLN.HashtagsMasUsados( info ); 
 			
 			if(res.isOk()){
-				assertEquals(2,res.getData().size());
+				assertEquals(4,res.getData().size());
 				assertEquals(1,res.getData().get(0).getId().intValue());
 				assertEquals(2,res.getData().get(1).getId().intValue());
+				assertEquals(4,res.getData().get(2).getId().intValue());
+				assertEquals(3,res.getData().get(3).getId().intValue());
 			}
 			else {
 				fail("El res no es válido");
