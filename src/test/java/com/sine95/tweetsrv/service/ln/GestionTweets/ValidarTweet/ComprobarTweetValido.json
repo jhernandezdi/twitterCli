@@ -1,0 +1,32 @@
+
+[
+{
+	"tabla": "TWEETS",
+	"meta" : [
+		 { "nombre":"id","tipo":"java.lang.Long","obligatorio":true }
+		,{ "nombre":"usuario","tipo":"java.lang.String","obligatorio":true,"longitud":"300"  }
+		,{ "nombre":"texto","tipo":"java.lang.String","obligatorio":true,"longitud":"500"  }
+		,{ "nombre":"localizacion","tipo":"java.lang.String","obligatorio":true,"longitud":"2"  }
+		,{ "nombre":"validacion","tipo":"java.lang.String","obligatorio":true,"longitud":"null"  }
+
+	],
+	"data" : [
+		{
+		  "id": 1
+		, "usuario": "pepe"
+		, "texto": "hola mundo!!"
+		, "localizacion": "es"
+		, "validacion": "N"
+		
+		},
+		{
+		  "id": 2
+		, "usuario": "pepe"
+		, "texto": "hola mundo2!!"
+		, "localizacion": "es"
+		, "validacion": "S"
+		
+		}
+	]
+}
+]

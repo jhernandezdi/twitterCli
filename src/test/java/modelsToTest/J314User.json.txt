@@ -1,0 +1,61 @@
+//Atención coger sólo desde la linea de iguales
+//Los datos deben ser añadidos manualmente
+//No olvides las comas para separar los objetos (porque los pones en un array)
+//No olvides poner las tablas en el orden correcto(si hay relaciones deben ser insertados correctamente o fallará)
+//Notas:
+////START_{Notas}
+////END_{Notas}
+===============================================
+
+{
+	"tabla": "j314User",
+	"meta" : [
+		 { "nombre":"id","tipo":"java.lang.Long","obligatorio":true }
+		,{ "nombre":"created_by","tipo":"java.lang.String","obligatorio":true,"longitud":"50"  }
+		,{ "nombre":"created_date","tipo":"java.sql.Timestamp","obligatorio":true }
+		,{ "nombre":"last_modified_by","tipo":"java.lang.String","obligatorio":false,"longitud":"50"  }
+		,{ "nombre":"last_modified_date","tipo":"java.sql.Timestamp","obligatorio":false }
+		,{ "nombre":"activated","tipo":"java.lang.String","obligatorio":true,"longitud":"null"  }
+		,{ "nombre":"activation_key","tipo":"java.lang.String","obligatorio":false,"longitud":"20"  }
+		,{ "nombre":"login","tipo":"java.lang.String","obligatorio":true,"longitud":"50"  }
+		,{ "nombre":"email","tipo":"java.lang.String","obligatorio":false,"longitud":"254"  }
+		,{ "nombre":"first_name","tipo":"java.lang.String","obligatorio":false,"longitud":"50"  }
+		,{ "nombre":"last_name","tipo":"java.lang.String","obligatorio":false,"longitud":"50"  }
+		,{ "nombre":"image_url","tipo":"java.lang.String","obligatorio":false,"longitud":"256"  }
+		,{ "nombre":"lang_key","tipo":"java.lang.String","obligatorio":false,"longitud":"6"  }
+		,{ "nombre":"password_hash","tipo":"java.lang.String","obligatorio":true,"longitud":"150"  }
+		,{ "nombre":"reset_date","tipo":"java.sql.Timestamp","obligatorio":false }
+		,{ "nombre":"reset_key","tipo":"java.lang.String","obligatorio":false,"longitud":"20"  }
+		,{ "nombre":"tiemposesion","tipo":"java.lang.Long","obligatorio":false }
+
+	],
+	"data" : [
+		{
+		  "id": 0
+		, "created_by": ""
+		, "created_date": "2019-12-31 23:59:59"
+		, "last_modified_by": ""
+		, "last_modified_date": "2019-12-31 23:59:59"
+		, "activated": ""
+		, "activation_key": ""
+		, "login": ""
+		, "email": ""
+		, "first_name": ""
+		, "last_name": ""
+		, "image_url": ""
+		, "lang_key": ""
+		, "password_hash": ""
+		, "reset_date": "2019-12-31 23:59:59"
+		, "reset_key": ""
+		, "tiemposesion": 0
+		
+		}
+	]
+}
+==================================
+Notas 2:
+Campos obligatorios:id,created_by,created_date,activated,login,password_hash
+Campos opcionales:last_modified_by,last_modified_date,activation_key,email,first_name,last_name,image_url,lang_key,reset_date,reset_key,tiempoSesion
+==================================
+////DELETE_START
+////DELETE_END

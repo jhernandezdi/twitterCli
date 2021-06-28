@@ -1,0 +1,29 @@
+//Atención coger sólo desde la linea de iguales
+//Los datos deben ser añadidos manualmente
+//No olvides las comas para separar los objetos (porque los pones en un array)
+//No olvides poner las tablas en el orden correcto(si hay relaciones deben ser insertados correctamente o fallará)
+//Notas:
+////START_{Notas}
+////END_{Notas}
+===============================================
+
+{
+	"tabla": "J314Authority",
+	"meta" : [
+		 { "nombre":"name","tipo":"java.lang.String","obligatorio":true,"longitud":"50"  }
+
+	],
+	"data" : [
+		{
+		  "name": ""
+		
+		}
+	]
+}
+==================================
+Notas 2:
+Campos obligatorios:name
+Campos opcionales:
+==================================
+////DELETE_START
+////DELETE_END

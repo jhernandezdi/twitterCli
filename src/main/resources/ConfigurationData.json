@@ -1,0 +1,137 @@
+[{
+    "tabla": "Configuration",
+    "ClavesVacias": [
+        "PruebaInt",
+        "PruebaLong"
+    ],
+    "meta": [
+        {
+            "nombre": "id",
+            "tipo": "java.lang.Long"
+        },
+        {
+            "nombre": "keyid",
+            "tipo": "java.lang.String"
+        },
+        {
+            "nombre": "value",
+            "tipo": "java.lang.String"
+        },
+        {
+            "nombre": "type",
+            "tipo": "java.lang.String"
+        },
+        {
+            "nombre": "description",
+            "tipo": "java.lang.String"
+        }
+    ],
+    "data": [
+        {
+            "id": 1,
+            "keyid": "emailNotif_user",
+            "type": "STRING",
+            "value": "info@sine95.com",
+            "description": "Usuario para acceder al servidor de correos"
+        },
+        {
+            "id": 2,
+            "keyid": "emailNotif_password",
+            "type": "STRING",
+            "value": "2fM4dDZsKOVZ",
+            "description": "Contrase\u00f1a para acceder al servidor de correos"
+        },
+        {
+            "id": 3,
+            "keyid": "emailNotif_mailserver",
+            "type": "STRING",
+            "value": "email.active24.com",
+            "description": "Servidor de correos para el env\u00edo de notificaciones / avisos a los usuarios"
+        },
+        {
+            "id": 4,
+            "keyid": "MailStartUp_IdCorreo",
+            "type": "STRING",
+            "value": "StartUp",
+            "description": "Identificador de correo"
+        },
+        {
+            "id": 5,
+            "keyid": "MailStartUp_Tos",
+            "type": "STRING",
+            "value": "jpablo.garcia@sine95.com",
+            "description": "Separado por comas"
+        },
+        {
+            "id": 6,
+            "keyid": "MailStartUp_Ccs",
+            "type": "STRING",
+            "value": "jmanuel.hernandez@sine95.com",
+            "description": "Separado por comas"
+        },
+        {
+            "id": 7,
+            "keyid": "MailStartUp_Bccs",
+            "type": "STRING",
+            "value": "jpablo.garcia@sine95.com",
+            "description": "Separado por comas"
+        },
+        {
+            "id": 8,
+            "keyid": "MailStartUp_From",
+            "type": "STRING",
+            "value": "devtest@sine95.com",
+            "description": "Desde"
+        },
+        {
+            "id": 9,
+            "keyid": "MailStartUp_Subject",
+            "type": "STRING",
+            "value": "Inicializaci\u00f3n",
+            "description": "Init"
+        },
+        {
+            "id": 10,
+            "keyid": "MailStartUp_Content",
+            "type": "STRING",
+            "value": "Se ha inicializado la App Tweet en TEST",
+            "description": "Init"
+        },
+        {
+            "id": 11,
+            "keyid": "TiempoEnSecParaCambioTicketAntesFinSesion",
+            "type": "INT",
+            "value": "300",
+            "description": "PruebaInt"
+        },
+        {
+            "id": 12,
+            "keyid": "NumMinSuscriptoresUsuarioParaPersistir",
+            "type": "LONG",
+            "value": "1500",
+            "description": "Solo se deben persistir aquellos tweets cuyos usuarios superen un n\u00famero N de seguidores (default 1500)."
+        },
+        {
+            "id": 13,
+            "keyid": "IdiomasPermitidosParaPersistir",
+            "type": "STRING",
+            "value": "es,fr,it",
+            "description": "Solo se deben persistir aquellos tweets cuyo idioma est\u00e9 en una lista de idiomas permitidos (default espa\u00f1ol, franc\u00e9s, italiano)."
+        },
+        {
+            "id": 14,
+            "keyid": "pruebaString",
+            "type": "STRING",
+            "value": "prueba1",
+            "description": "PruebaString prueba1"
+        },
+        {
+            "id": 15,
+            "keyid": "MaxNumHashTags",
+            "type": "INT",
+            "value": "10",
+            "description": "Máximo de hashtags"
+        }
+    ]
+}
+]

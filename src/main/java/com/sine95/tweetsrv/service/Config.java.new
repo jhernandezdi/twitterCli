@@ -1,0 +1,459 @@
+// Inicio de template(JP) Java/Config
+package com.sine95.tweetsrv.service;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.sine95.kernel.base.Result;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.sine95.tweetsrv.domain.Configuration;
+import com.sine95.tweetsrv.service.crud.ConfigurationServiceCRUD;
+import org.sine95.kernel.base.cache.ICache;
+import com.sine95.tweetsrv.service.ln.CacheLNService;
+
+import org.springframework.context.ApplicationContext;
+
+@Service
+public class Config {
+
+	@Autowired
+	ConfigurationServiceCRUD service;
+	
+	@Autowired
+	ApplicationContext appCon;
+	
+	
+	public enum Claves{
+
+		diasVacasPorAnno
+,
+		ventanaConsultaSolicitudesVacasEnDias
+,
+		ventanaConsultaImputacionesEnDias
+,
+		genRecordAutoriz_query
+,
+		usuariosPorPerfil_query
+,
+		dependencias_query
+,
+		solicitudesPorAutorizador_query
+,
+		perfilesGestion
+,
+		genRegistros_query
+,
+		setTipoVacas_query
+,
+		emailNotif_query
+,
+		emailNotifAutoriz_body
+,
+		emailNotifAutoriz_subject
+,
+		emailNotif_body
+,
+		emailNotif_subject
+,
+		emailNotif_user
+,
+		emailNotif_password
+,
+		emailNotif_mailserver
+,
+		pruebaString
+,
+		PruebaInt
+,
+		PruebaLong
+        
+	}
+	
+	//protected static Map<String, String> data=null;
+	protected static ICache<String> cache=null;
+	
+	protected ICache<String> getData()
+	{
+		/*
+		if(cache==null)
+		{
+			data=new HashMap<>();
+			Result<List<Configuration>> findAll = _service.findAll();
+			if(findAll.isOk())
+			{
+				for(Configuration datum: findAll.getData())
+				{
+					data.put(datum.getKeyid(), datum.getValue());
+				}
+			}
+		}
+		return data;
+		*/
+		if(cache==null)
+		{
+			CacheLNService cacheService=appCon.getBean(CacheLNService.class);
+			Result<ICache<String>> res = cacheService.getCacheAreaConfiguration();
+			if(res.isOk())
+			{
+				cache=res.getData();
+			}
+		}
+		return cache;
+		
+	}
+	
+	/**
+	N?mero de d?as de vacaciones al a?o. Es el valor por defecto para los nuevos usuarios
+	*/
+	public String getDiasVacasPorAnnoAsString()
+	{
+		String res = getData().get(Claves.diasVacasPorAnno.toString()).getData();
+		
+		return res;
+	}
+	public Integer getDiasVacasPorAnno()
+	{
+
+        return Integer.parseInt(getDiasVacasPorAnnoAsString(),10);
+
+	}
+
+	/**
+	N?mero de d?as del hist?rico de la ventana de solicitudes de vacaciones, a partir de la fecha actual
+	*/
+	public String getVentanaConsultaSolicitudesVacasEnDiasAsString()
+	{
+		String res = getData().get(Claves.ventanaConsultaSolicitudesVacasEnDias.toString()).getData();
+		
+		return res;
+	}
+	public Integer getVentanaConsultaSolicitudesVacasEnDias()
+	{
+
+        return Integer.parseInt(getVentanaConsultaSolicitudesVacasEnDiasAsString(),10);
+
+	}
+
+	/**
+	N?mero de d?as del hist?rico de la ventana de imputaciones, a partir de la fecha actual
+	*/
+	public String getVentanaConsultaImputacionesEnDiasAsString()
+	{
+		String res = getData().get(Claves.ventanaConsultaImputacionesEnDias.toString()).getData();
+		
+		return res;
+	}
+	public Integer getVentanaConsultaImputacionesEnDias()
+	{
+
+        return Integer.parseInt(getVentanaConsultaImputacionesEnDiasAsString(),10);
+
+	}
+
+	/**
+	Query que obtiene los autorizadores con solicitudes de vacaciones pendientes, y su n?mero
+	*/
+	public String getGenRecordAutoriz_queryAsString()
+	{
+		String res = getData().get(Claves.genRecordAutoriz_query.toString()).getData();
+		
+		return res;
+	}
+	public String getGenRecordAutoriz_query()
+	{
+
+		return getGenRecordAutoriz_queryAsString();
+
+	}
+
+	/**
+	Query que obtiene de un golpe la lista de DatosUsuario de usuarios con un perfil determinado
+	*/
+	public String getUsuariosPorPerfil_queryAsString()
+	{
+		String res = getData().get(Claves.usuariosPorPerfil_query.toString()).getData();
+		
+		return res;
+	}
+	public String getUsuariosPorPerfil_query()
+	{
+
+		return getUsuariosPorPerfil_queryAsString();
+
+	}
+
+	/**
+	Query que obtiene de un golpe la lista de todas las Dependencias como DatosDependencia
+	*/
+	public String getDependencias_queryAsString()
+	{
+		String res = getData().get(Claves.dependencias_query.toString()).getData();
+		
+		return res;
+	}
+	public String getDependencias_query()
+	{
+
+		return getDependencias_queryAsString();
+
+	}
+
+	/**
+	Query que obtiene de un golpe la lista de Solicitudes generadas por Usuarios entre cuyos Autorizadores est? el Usuario logado
+	*/
+	public String getSolicitudesPorAutorizador_queryAsString()
+	{
+		String res = getData().get(Claves.solicitudesPorAutorizador_query.toString()).getData();
+		
+		return res;
+	}
+	public String getSolicitudesPorAutorizador_query()
+	{
+
+		return getSolicitudesPorAutorizador_queryAsString();
+
+	}
+
+	/**
+	Perfiles que son tratados como gestores. Entre otras cosas podr?n ver las imputaciones de todos los usuarios
+	*/
+	public String getPerfilesGestionAsString()
+	{
+		String res = getData().get(Claves.perfilesGestion.toString()).getData();
+		
+		return res;
+	}
+	public String getPerfilesGestion()
+	{
+
+		return getPerfilesGestionAsString();
+
+	}
+
+	/**
+	Query que inserta los registros de imputacion vacios diariamente, para todos los usuarios activados
+	*/
+	public String getGenRegistros_queryAsString()
+	{
+		String res = getData().get(Claves.genRegistros_query.toString()).getData();
+		
+		return res;
+	}
+	public String getGenRegistros_query()
+	{
+
+		return getGenRegistros_queryAsString();
+
+	}
+
+	/**
+	Query que cambia el tipo de registro a VAC para los registros de imputacion de tipo NOR correspondientes a periodos de vacaciones aceptadas. Query original:
+UPDATE registro g SET tipo=''VAC'',horaentrada=''09:00:00'', horasalida=''17:00:00'' WHERE g.id_registro IN (	SELECT r.id_registro FROM registro r, solicitud s	WHERE r.user_id = s.solicitante AND	r.tipo = ''NOR'' AND s.estado = ''ACEPTADA'' AND current_date BETWEEN s.fechaini AND s.fechafin)
+	*/
+	public String getSetTipoVacas_queryAsString()
+	{
+		String res = getData().get(Claves.setTipoVacas_query.toString()).getData();
+		
+		return res;
+	}
+	public String getSetTipoVacas_query()
+	{
+
+		return getSetTipoVacas_queryAsString();
+
+	}
+
+	/**
+	Query que obtiene el correo, nombre, apellidos y numero de imputaciones pendientes, para un usuario
+	*/
+	public String getEmailNotif_queryAsString()
+	{
+		String res = getData().get(Claves.emailNotif_query.toString()).getData();
+		
+		return res;
+	}
+	public String getEmailNotif_query()
+	{
+
+		return getEmailNotif_queryAsString();
+
+	}
+
+	/**
+	Cuerpo del correo que se env?a a los usuarios responsables que tienen solicitudes de vacaciones pendientes
+	*/
+	public String getEmailNotifAutoriz_bodyAsString()
+	{
+		String res = getData().get(Claves.emailNotifAutoriz_body.toString()).getData();
+		
+		return res;
+	}
+	public String getEmailNotifAutoriz_body()
+	{
+
+		return getEmailNotifAutoriz_bodyAsString();
+
+	}
+
+	/**
+	T?tulo del correo que se env?a a los usuarios que tienen solicitudes de vacaciones pendientes
+	*/
+	public String getEmailNotifAutoriz_subjectAsString()
+	{
+		String res = getData().get(Claves.emailNotifAutoriz_subject.toString()).getData();
+		
+		return res;
+	}
+	public String getEmailNotifAutoriz_subject()
+	{
+
+		return getEmailNotifAutoriz_subjectAsString();
+
+	}
+
+	/**
+	Cuerpo del correo que se env?a a los usuarios que tienen imputaciones pendientes
+	*/
+	public String getEmailNotif_bodyAsString()
+	{
+		String res = getData().get(Claves.emailNotif_body.toString()).getData();
+		
+		return res;
+	}
+	public String getEmailNotif_body()
+	{
+
+		return getEmailNotif_bodyAsString();
+
+	}
+
+	/**
+	T?tulo del correo que se env?a a los usuarios que tienen imputaciones pendientes
+	*/
+	public String getEmailNotif_subjectAsString()
+	{
+		String res = getData().get(Claves.emailNotif_subject.toString()).getData();
+		
+		return res;
+	}
+	public String getEmailNotif_subject()
+	{
+
+		return getEmailNotif_subjectAsString();
+
+	}
+
+	/**
+	Usuario para acceder al servidor de correos
+	*/
+	public String getEmailNotif_userAsString()
+	{
+		String res = getData().get(Claves.emailNotif_user.toString()).getData();
+		
+		return res;
+	}
+	public String getEmailNotif_user()
+	{
+
+		return getEmailNotif_userAsString();
+
+	}
+
+	/**
+	Contrase?a para acceder al servidor de correos
+	*/
+	public String getEmailNotif_passwordAsString()
+	{
+		String res = getData().get(Claves.emailNotif_password.toString()).getData();
+		
+		return res;
+	}
+	public String getEmailNotif_password()
+	{
+
+		return getEmailNotif_passwordAsString();
+
+	}
+
+	/**
+	Servidor de correos para el env?o de notificaciones / avisos a los usuarios
+	*/
+	public String getEmailNotif_mailserverAsString()
+	{
+		String res = getData().get(Claves.emailNotif_mailserver.toString()).getData();
+		
+		return res;
+	}
+	public String getEmailNotif_mailserver()
+	{
+
+		return getEmailNotif_mailserverAsString();
+
+	}
+
+	/**
+	PruebaString prueba1
+	*/
+	public String getPruebaStringAsString()
+	{
+		String res = getData().get(Claves.pruebaString.toString()).getData();
+		
+		return res;
+	}
+	public String getPruebaString()
+	{
+
+		return getPruebaStringAsString();
+
+	}
+
+	/**
+	PruebaInt
+	*/
+	public String getPruebaIntAsString()
+	{
+		String res = getData().get(Claves.PruebaInt.toString()).getData();
+		
+		return res;
+	}
+	public Integer getPruebaInt()
+	{
+
+        return Integer.parseInt(getPruebaIntAsString(),10);
+
+	}
+
+	/**
+	PruebaLong
+	*/
+	public String getPruebaLongAsString()
+	{
+		String res = getData().get(Claves.PruebaLong.toString()).getData();
+		
+		return res;
+	}
+	public Long getPruebaLong()
+	{
+
+        return Long.parseLong(getPruebaLongAsString(),10);
+
+	}
+        
+
+	public String get(String clave)
+	{
+		return getData().get(clave).getData();
+	}
+
+	public static void reset()
+	{
+		cache.reset();
+		//cache=null;
+	}
+}
+
+
+// Fin de template(JP) Java/Config

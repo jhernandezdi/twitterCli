@@ -1,0 +1,33 @@
+//Atención coger sólo desde la linea de iguales
+//Los datos deben ser añadidos manualmente
+//No olvides las comas para separar los objetos (porque los pones en un array)
+//No olvides poner las tablas en el orden correcto(si hay relaciones deben ser insertados correctamente o fallará)
+//Notas:
+////START_{Notas}
+////END_{Notas}
+===============================================
+
+{
+	"tabla": "HASHTAGS",
+	"meta" : [
+		 { "nombre":"id","tipo":"java.lang.Long","obligatorio":true }
+		,{ "nombre":"hashtags","tipo":"java.lang.String","obligatorio":true,"longitud":"300"  }
+		,{ "nombre":"contador","tipo":"java.lang.Long","obligatorio":true }
+
+	],
+	"data" : [
+		{
+		  "id": 0
+		, "hashtags": ""
+		, "contador": 0
+		
+		}
+	]
+}
+==================================
+Notas 2:
+Campos obligatorios:id,hashtags,contador
+Campos opcionales:
+==================================
+////DELETE_START
+////DELETE_END

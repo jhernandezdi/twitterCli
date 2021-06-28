@@ -1,0 +1,33 @@
+//Atención coger sólo desde la linea de iguales
+//Los datos deben ser añadidos manualmente
+//No olvides las comas para separar los objetos (porque los pones en un array)
+//No olvides poner las tablas en el orden correcto(si hay relaciones deben ser insertados correctamente o fallará)
+//Notas:
+////START_{Notas}
+////END_{Notas}
+===============================================
+
+{
+	"tabla": "SECURITYGROUP",
+	"meta" : [
+		 { "nombre":"id","tipo":"java.lang.Long","obligatorio":true }
+		,{ "nombre":"allowedgroup","tipo":"java.lang.String","obligatorio":true,"longitud":"150"  }
+		,{ "nombre":"identifier","tipo":"java.lang.String","obligatorio":true,"longitud":"300"  }
+
+	],
+	"data" : [
+		{
+		  "id": 0
+		, "allowedgroup": ""
+		, "identifier": ""
+		
+		}
+	]
+}
+==================================
+Notas 2:
+Campos obligatorios:id,allowedgroup,identifier
+Campos opcionales:
+==================================
+////DELETE_START
+////DELETE_END

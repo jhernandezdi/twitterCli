@@ -1,0 +1,40 @@
+
+[
+{
+	"tabla": "HASHTAGS",
+	"meta" : [
+		 { "nombre":"id","tipo":"java.lang.Long","obligatorio":true }
+		,{ "nombre":"hashtags","tipo":"java.lang.String","obligatorio":true,"longitud":"300"  }
+		,{ "nombre":"contador","tipo":"java.lang.Long","obligatorio":true }
+
+	],
+	"data" : [
+		{
+		  "id": 1
+		, "hashtags": "#HolaMundo"
+		, "contador": 150
+		
+		},
+		{
+		  "id": 2
+		, "hashtags": "#HolaMundo2"
+		, "contador": 100
+		
+		}
+		,
+		{
+		  "id": 3
+		, "hashtags": "#HolaMundo3"
+		, "contador": 1
+		
+		}
+		,
+		{
+		  "id": 4
+		, "hashtags": "#HolaMundo4"
+		, "contador": 50
+		
+		}
+	]
+}
+]

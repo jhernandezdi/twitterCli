@@ -1,0 +1,37 @@
+//Atención coger sólo desde la linea de iguales
+//Los datos deben ser añadidos manualmente
+//No olvides las comas para separar los objetos (porque los pones en un array)
+//No olvides poner las tablas en el orden correcto(si hay relaciones deben ser insertados correctamente o fallará)
+//Notas:
+////START_{Notas}
+////END_{Notas}
+===============================================
+
+{
+	"tabla": "CONFIGURATION",
+	"meta" : [
+		 { "nombre":"id","tipo":"java.lang.Long","obligatorio":true }
+		,{ "nombre":"keyid","tipo":"java.lang.String","obligatorio":true,"longitud":"300"  }
+		,{ "nombre":"value","tipo":"java.lang.String","obligatorio":true,"longitud":"4000"  }
+		,{ "nombre":"type","tipo":"java.lang.String","obligatorio":true,"longitud":"30"  }
+		,{ "nombre":"description","tipo":"java.lang.String","obligatorio":true,"longitud":"4000"  }
+
+	],
+	"data" : [
+		{
+		  "id": 0
+		, "keyid": ""
+		, "value": ""
+		, "type": ""
+		, "description": ""
+		
+		}
+	]
+}
+==================================
+Notas 2:
+Campos obligatorios:id,keyid,value,type,description
+Campos opcionales:
+==================================
+////DELETE_START
+////DELETE_END

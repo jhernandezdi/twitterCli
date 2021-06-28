@@ -1,0 +1,11 @@
+version: '2'
+services:
+    Tweetsrv-postgresql:
+        image: postgres:10.4
+        # volumes:
+        #     - ~/volumes/jhipster/Tweetsrv/postgresql/:/var/lib/postgresql/data/
+        environment:
+            - POSTGRES_USER=Tweetsrv
+            - POSTGRES_PASSWORD=
+        ports:
+            - 5432:5432

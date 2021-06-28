@@ -1,0 +1,317 @@
+#### Generado para tipo DEVH2
+#### en Thu Jun 24 19:44:47 CEST 2021
+StartApp:
+         #  Configuration,Security,UserFromId,UserFromLogin -> estos son por defecto
+        cachesToReset: Configuration,Security,UserFromId,UserFromLogin # Nombres de los cachés a resetear, sólo se aplica si resetCache está a true
+         # 
+         # S-> Si, N->No
+        executeInit: S # Cuando es un entorno de Test hay cosas que no hace falta ejecutar
+         # 
+         # S-> Si, N->No
+        modeTest: N # Cuando es un entorno de Test el cache debería usar un NullCache
+         # 
+         # true/false
+        resetCache: true # Resetea todos los cachés al inicio de la app
+         # 
+info:
+         # 
+        display-ribbon-on-profiles: dev # 
+j314:
+        jwt:
+                 # De momento el valor por defecto es HmacSHA512
+                modo_cifrado: HmacSHA512 # Modo cifrado para las firmas de JWT
+                 # 
+                 # De momento el valor por defecto es PassDefecto
+                password: PassDefecto # password para cifrar el jwt, ojo este valor no debe ser difundido
+                 # 
+jhipster:
+        async:
+                 # 
+                core-pool-size: 2 # 
+                 # 
+                max-pool-size: 50 # 
+                 # 
+                queue-capacity: 10000 # 
+        cors:
+                 # 
+                allow-credentials: true # 
+                 # 
+                allowed-headers: "*" # 
+                 # 
+                allowed-methods: "*" # 
+                 # 
+                allowed-origins: "*" # 
+                 # 
+                exposed-headers: "Link,X-Total-Count" # 
+                 # 
+                max-age: 1800 # 
+        http:
+                 # 
+                version: V_1_1 # 
+        logging:
+                logstash:
+                         # 
+                        enabled: false # 
+                         # 
+                        host: localhost # 
+                         # 
+                        port: 5000 # 
+                         # 
+                        queue-size: 512 # 
+        mail:
+                 # 
+                base-url: http://127.0.0.1:8080 # 
+                 # 
+                from: pruebas@sine95.com # 
+        metrics:
+                jmx:
+                         # 
+                        enabled: true # 
+                logs:
+                         # 
+                        enabled: false # 
+                         # 
+                        report-frequency: 60 # 
+        security:
+                remember-me:
+                         # 
+                        key: ac241baf30e63f983e34defd2c24e55c5933fb40 # 
+        swagger:
+                 # 
+                contact-email:  # 
+                 # 
+                contact-name:  # 
+                 # 
+                contact-url:  # 
+                 # 
+                default-include-pattern: /api/.* # 
+                 # 
+                description: documentación tweet API # 
+                 # 
+                license:  # 
+                 # 
+                license-url:  # 
+                 # 
+                terms-of-service-url:  # 
+                 # 
+                title: tweet API # 
+                 # 
+                version: 0.0.1 # 
+management:
+        endpoint:
+                health:
+                         # 
+                        show-details: when_authorized # 
+        endpoints:
+                web:
+                         # 
+                        base-path: /management # 
+                        exposure:
+                                 # 
+                                include: [configprops, env, health, info, threaddump] # 
+        health:
+                mail:
+                         # 
+                        enabled: false # 
+        info:
+                git:
+                         # 
+                        mode: full # 
+        metrics:
+                 # 
+                enabled: false # 
+redis:
+         # 
+        app: tweet # App para el nombre de las claves en redis
+         # 
+         # 
+        blockWhenExhausted: true # Para el pool
+         # 
+         # 
+        maxIdle: 128 # Para el pool
+         # 
+         # 
+        maxTotal: 128 # Para el pool
+         # 
+         # 
+        minEvictableIdleTimeInSecs: 60 # Para el pool
+         # 
+         # 
+        minIdle: 16 # Para el pool
+         # 
+         # 
+        numTestsPerEvictionRun: 3 # Para el pool
+         # 
+         # 
+        pass: 5sp9/EBsaUQKrmgUJFUIRURoVgdo7tusr9TmYMs/2MeBCo8sTNcsOyG9H2poBvlEIHndQ5jLmTN4Ac+p # Pass de la instancia de redis
+         # 
+         # 
+        port: 6379 # Url de redis
+         # 
+         # 
+        testOnBorrow: true # Para el pool
+         # 
+         # 
+        testOnReturn: true # Para el pool
+         # 
+         # 
+        testWhileIdle: true # Para el pool
+         # 
+         # 
+        timeBetweenEvictionRunsInSecs: 30 # Para el pool
+         # 
+         # 
+        url: 192.168.1.89 # Url de redis
+         # 
+ # 
+security.require-ssl: false # obligar que vaya por todo por ssl
+ # 
+server:
+        http2:
+                 # 
+                enabled: false # Pasar a http2
+                 # 
+         # Nota: si se cambia hay que tocarlo también en ConfigClient.json
+        port: 8080 # Puerto en el que se sirven tanto el contenido estatico como el dinamico
+         # 
+        servlet:
+                session:
+                        cookie:
+                                 # 
+                                http-only: true # 
+spring:
+        application:
+                 # 
+                name: tweet # 
+        datasource:
+                 # Driver de la BBDD
+                driver-class-name:  # Opcional
+                 # Para postgre es obligatorio, para H2 no
+                 # Valor para mysql:com.mysql.jdbc.Driver
+                 # Valor para postgresql:org.postgresql.Driver
+                 # Valor para h2:org.h2.Driver
+                 # Valor para sqlserver:com.microsoft.sqlserver.jdbc.SQLServerDriver
+                 # 
+                name:  # 
+                 # 
+                password: sa # 
+                 # 
+                type: com.zaxxer.hikari.HikariDataSource # 
+                 # La configuracion original de TEST era jdbc:h2:mem:tweet;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+                 # Algunas veces (no se si por el driver o la version de la BD) se produce un error de SSL. En ese caso anadir a la url: &useSSL=false
+                url:  # MysSQL: jdbc:mysql://<server>:<port defecto 3306>/<bd>?serverTimezone=UTC&useSSL=false
+                 # postgresql: jdbc:postgresql://<server>:<port>/<db>
+                 # SQLServer: jdbc:sqlserver://<server>:<port(1433)>;user=<usuario>;password=<pass>;database=<BBDD>
+                 # H2 (mem): jdbc:h2:mem:NewPadel;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+                 # H2 (disco): jdbc:h2:../target/devbbdd;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+                 # Para entorno TEST con H2 usuario vacio
+                username: sa # 
+        devtools:
+                livereload:
+                         # 
+                        enabled: false # 
+                restart:
+                         # 
+                        enabled: true # 
+        jackson:
+                 # 
+                serialization.indent_output: true # 
+        jpa:
+                 # Para entorno TEST con H2, valor H2
+                 # Postgresql:POSTGRESQL
+                 # MySQL:MYSQL
+                 # SQLServer:SQL_SERVER
+                database:  # 
+                 # Para entorno TEST con H2, valor: io.github.jhipster.domain.util.FixedH2Dialect
+                database-platform: org.hibernate.dialect.HSQLDialect # MySQL:org.hibernate.dialect.MySQL5InnoDBDialect
+                 # Postgresql:io.github.jhipster.domain.util.FixedPostgreSQL82Dialect
+                 # Postgresql+9:org.hibernate.dialect.PostgreSQL9Dialect
+                 # SQLServer: org.hibernate.dialect.SQLServerDialect
+                 # H2:io.github.jhipster.domain.util.FixedH2Dialect
+                 # 
+                generate-ddl: true # 
+                hibernate:
+                         # https://docs.spring.io/spring-boot/docs/current/reference/html/howto-database-initialization.html
+                        ddl-auto: update # Valores posibles: none, validate, update, create, create-drop
+                         # 
+                         # 
+                        format_sql: true # 
+                        jdbc:
+                                 # 
+                                time_zone: UTC # 
+                        naming:
+                                 # El valor que estabamos usando para todos los entornos era: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
+                                 # Este valor implica que al generar los nombres de columnas en la BD usa guiones bajos cuando detecta una mayuscula (p.e.: CampoEjemplo lo genera como campo_ejemplo)
+                                implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl # 
+                                 # El valor que estabamos usando para todos los entornos era: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+                                 # Este valor implica que al generar los nombres de columnas en la BD usa guiones bajos cuando detecta una mayuscula (p.e.: CampoEjemplo lo genera como campo_ejemplo)
+                                physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl # 
+                         # 
+                        show_sql: true # 
+                 # 
+                open-in-view: false # 
+                properties:
+                        hibernate:
+                                 # 
+                                enable_lazy_load_no_trans: true # 
+                                temp:
+                                         # 
+                                        use_jdbc_metadata_defaults: false # Disable feature detection by this undocumented parameter. Check the org.hibernate.engine.jdbc.internal.JdbcServiceImpl.configure method for more details. Because detection is disabled you have to set correct dialect by hand (see spring.jpa.database-platform property)
+                                         # 
+                         # 
+                        hibernate.cache.use_query_cache: false # 
+                         # 
+                        hibernate.cache.use_second_level_cache: false # 
+                         # 
+                        hibernate.enable_lazy_load_no_trans: true # 
+                         # 
+                        hibernate.generate_statistics: true # 
+                         # 
+                        hibernate.id.new_generator_mappings: true # 
+                 # 
+                show-sql: true # 
+        liquibase:
+                 # 
+                contexts: dev # 
+        mail:
+                 # Si hay dudas, revisar: https://faq.active24.com/es/901626-POP-e-IMAP---Configuraci%C3%B3n-del-cliente-de-correo-electr%C3%B3nico-Outlook-Thunderbird-Apple-?l=es
+                 # Para la configuración: https://www.jhipster.tech/tips/011_tip_configuring_email_in_jhipster.html
+                host: smtp.office365.com # 
+                 # 
+                password: Han78618 # 
+                 # 
+                port: 587 # 
+                properties:
+                        mail:
+                                smtp:
+                                         # 
+                                        auth: true # 
+                                        ssl:
+                                                 # 
+                                                trust: smtp.office365.com # 
+                                        starttls:
+                                                 # 
+                                                enable: true # 
+                 # 
+                protocol: smtp # 
+                 # 
+                username: devtest@sine95.com # 
+        messages:
+                 # 
+                basename: i18n/messages # 
+                 # 
+                cache-duration: PT1S # 
+        mvc:
+                favicon:
+                         # 
+                        enabled: false # 
+        profiles:
+                 # 
+                active: dev # 
+                 # 
+                include: swagger,no-liquibase # 
+        thymeleaf:
+                 # 
+                cache: false # 
+                 # 
+                mode: HTML # 

@@ -1,0 +1,43 @@
+//Atención coger sólo desde la linea de iguales
+//Los datos deben ser añadidos manualmente
+//No olvides las comas para separar los objetos (porque los pones en un array)
+//No olvides poner las tablas en el orden correcto(si hay relaciones deben ser insertados correctamente o fallará)
+//Notas:
+////START_{Notas}
+////END_{Notas}
+===============================================
+
+{
+	"tabla": "LOGTASK",
+	"meta" : [
+		 { "nombre":"id","tipo":"java.lang.Long","obligatorio":true }
+		,{ "nombre":"horainicio","tipo":"java.sql.Timestamp","obligatorio":true }
+		,{ "nombre":"horafin","tipo":"java.sql.Timestamp","obligatorio":false }
+		,{ "nombre":"clase","tipo":"java.lang.String","obligatorio":true,"longitud":"250"  }
+		,{ "nombre":"metodo","tipo":"java.lang.String","obligatorio":true,"longitud":"250"  }
+		,{ "nombre":"errores","tipo":"java.lang.String","obligatorio":false,"longitud":"4000"  }
+		,{ "nombre":"warnings","tipo":"java.lang.String","obligatorio":false,"longitud":"4000"  }
+		,{ "nombre":"infos","tipo":"java.lang.String","obligatorio":false,"longitud":"4000"  }
+
+	],
+	"data" : [
+		{
+		  "id": 0
+		, "horainicio": "2019-12-31 23:59:59"
+		, "horafin": "2019-12-31 23:59:59"
+		, "clase": ""
+		, "metodo": ""
+		, "errores": ""
+		, "warnings": ""
+		, "infos": ""
+		
+		}
+	]
+}
+==================================
+Notas 2:
+Campos obligatorios:id,horaInicio,clase,metodo
+Campos opcionales:horaFin,errores,warnings,infos
+==================================
+////DELETE_START
+////DELETE_END
