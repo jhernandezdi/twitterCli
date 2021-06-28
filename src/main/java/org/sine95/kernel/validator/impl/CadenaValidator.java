@@ -8,7 +8,7 @@ import org.apache.commons.beanutils.BeanMap;
 import org.sine95.kernel.base.errores.IError;
 import org.sine95.kernel.validator.ISingleValidator;
 
-import com.sine95.tweetsrv.errores.ErrorLongitudCampoCadena;
+import com.juanma.twitterCli.errores.ErrorLongitudCampoCadena;
 
 public class CadenaValidator implements ISingleValidator {
 

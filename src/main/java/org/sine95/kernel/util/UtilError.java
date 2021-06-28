@@ -10,7 +10,7 @@ import org.sine95.kernel.base.errores.IError;
 import org.sine95.kernel.base.errores.IInfo;
 import org.sine95.kernel.base.errores.IWarning;
 
-import com.sine95.tweetsrv.enums.EnumCategoriasErrores;
+import com.juanma.twitterCli.enums.EnumCategoriasErrores;
 
 public class UtilError {
 	

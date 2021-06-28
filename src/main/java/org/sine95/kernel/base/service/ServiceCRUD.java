@@ -15,8 +15,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 
-import com.sine95.tweetsrv.errores.ErrorGeneral;
-import com.sine95.tweetsrv.errores.ErrorIdNoEncontrado;
+import com.juanma.twitterCli.errores.ErrorGeneral;
+import com.juanma.twitterCli.errores.ErrorIdNoEncontrado;
 
 import io.github.jhipster.service.QueryService;
 

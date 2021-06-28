@@ -12,8 +12,7 @@ import java.util.List;
 
 import org.sine95.kernel.base.Contexto;
 
-import com.sine95.tweetsrv.repository.UtilDB;
-//import com.sine95.tweetsrv.service.UserService;
+import com.juanma.twitterCli.repository.UtilDB;
 
 /**
  * Clase base para los Tests de JUnit

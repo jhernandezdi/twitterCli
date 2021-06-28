@@ -2,7 +2,7 @@ package org.sine95.kernel.base.errores;
 
 import java.util.Map;
 
-import com.sine95.tweetsrv.enums.EnumCategoriasErrores;
+import com.juanma.twitterCli.enums.EnumCategoriasErrores;
 
 public interface IError {
 	public String getMensaje();
